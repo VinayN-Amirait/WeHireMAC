@@ -272,8 +272,8 @@
 
   /* MAC RENTAL FLIP CARDS */
   .mac-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     justify-content: center;
     margin-top: 16px;
@@ -281,8 +281,7 @@
   .mac-flip-card {
     perspective: 1000px;
     height: 340px;
-    width: 210px;
-    flex: 0 0 210px;
+    width: 100%;
     cursor: pointer;
   }
   .mac-flip-inner {
@@ -533,8 +532,8 @@
     .flip-back p { font-size: 12px; line-height: 1.55; }
 
     /* Mac rental cards — 2 per row on mobile */
-    .mac-grid { gap: 12px; }
-    .mac-flip-card { width: calc(50% - 6px); flex: 0 0 calc(50% - 6px); height: 310px; }
+    .mac-grid { gap: 12px; grid-template-columns: repeat(2, 1fr); }
+    .mac-flip-card { width: 100%; height: 310px; }
     .mac-front-img { font-size: 40px; margin-bottom: 8px; }
     .mac-front-name { font-size: 12px; }
     .mac-front-specs { font-size: 10px; }
@@ -571,7 +570,8 @@
 
   @media (max-width: 400px) {
     .flip-card { width: 100%; flex: 0 0 100%; }
-    .mac-flip-card { width: 100%; flex: 0 0 100%; height: 330px; }
+    .mac-grid { grid-template-columns: 1fr; }
+    .mac-flip-card { width: 100%; flex: unset; height: 330px; }
     .mac-front-img { font-size: 48px; }
     .mac-front-name { font-size: 14px; }
     .mac-front-specs { font-size: 12px; }

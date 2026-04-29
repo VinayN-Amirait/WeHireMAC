@@ -280,7 +280,7 @@
   }
   .mac-flip-card {
     perspective: 1000px;
-    height: 290px;
+    height: 340px;
     width: 210px;
     flex: 0 0 210px;
     cursor: pointer;
@@ -323,18 +323,19 @@
   .mac-back {
     background: var(--charcoal);
     transform: rotateY(180deg);
-    padding: 20px 18px 18px;
+    padding: 18px 16px 16px;
     display: flex; flex-direction: column; justify-content: space-between;
+    overflow: hidden;
   }
   .mac-back h4 {
     font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
-    color: #fff; margin-bottom: 10px; line-height: 1.3;
+    color: #fff; margin-bottom: 8px; line-height: 1.3; flex-shrink: 0;
   }
-  .mac-back-specs { list-style: none; flex: 1; }
+  .mac-back-specs { list-style: none; flex: 1; overflow: hidden; }
   .mac-back-specs li {
     display: flex; justify-content: space-between; align-items: flex-start;
-    padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-    font-size: 11.5px; gap: 6px;
+    padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 11px; gap: 6px;
   }
   .mac-back-specs li:last-child { border-bottom: none; }
   .spec-label { color: rgba(255,255,255,0.5); flex-shrink: 0; }
@@ -533,7 +534,7 @@
 
     /* Mac rental cards — 2 per row on mobile */
     .mac-grid { gap: 12px; }
-    .mac-flip-card { width: calc(50% - 6px); flex: 0 0 calc(50% - 6px); height: 260px; }
+    .mac-flip-card { width: calc(50% - 6px); flex: 0 0 calc(50% - 6px); height: 310px; }
     .mac-front-img { font-size: 40px; margin-bottom: 8px; }
     .mac-front-name { font-size: 12px; }
     .mac-front-specs { font-size: 10px; }
@@ -570,7 +571,7 @@
 
   @media (max-width: 400px) {
     .flip-card { width: 100%; flex: 0 0 100%; }
-    .mac-flip-card { width: 100%; flex: 0 0 100%; height: 280px; }
+    .mac-flip-card { width: 100%; flex: 0 0 100%; height: 330px; }
     .mac-front-img { font-size: 48px; }
     .mac-front-name { font-size: 14px; }
     .mac-front-specs { font-size: 12px; }

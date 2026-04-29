@@ -604,12 +604,63 @@
   <!-- CONTACT FORM -->
   <div class="form-card">
     <div class="form-tabs">
-      <button class="form-tab-btn active" onclick="switchFormTab('repair', this)">🔧 Repair</button>
-      <button class="form-tab-btn" onclick="switchFormTab('rental', this)">💻 Rental</button>
+      <button class="form-tab-btn active" onclick="switchFormTab('rental', this)">💻 Rental</button>
+     <button class="form-tab-btn" onclick="switchFormTab('repair', this)">🔧 Repair</button>
     </div>
 
     <div class="form-body">
-      <!-- REPAIR FORM -->
+            <!-- RENTAL FORM -->
+      <div class="form-panel" id="form-rental">
+        <div id="rental-success" class="form-success">
+          <div class="form-success-icon">✅</div>
+          <h3>Rental Request Sent!</h3>
+          <p>We'll confirm availability and pricing within 30 Minutes.</p>
+        </div>
+        <div id="rental-form-inner">
+          <div class="form-row">
+            <label>Full Name *</label>
+            <input type="text" placeholder="Priya Kapoor" id="rent-name" required>
+          </div>
+          <div class="form-row">
+            <label>Email *</label>
+            <input type="email" placeholder="you@email.com" id="rent-email" required>
+          </div>
+          <div class="form-row">
+            <label>Choose Your Mac *</label>
+            <select id="rent-mac">
+              <option value="" disabled selected>Select a Mac…</option>
+              <option>MacBook Air M1 (13")</option>
+              <option>MacBook Air M2 (13")</option>
+              <option>MacBook Air M3 (15")</option>
+              <option>MacBook Pro M2 (13")</option>
+              <option>MacBook Pro M3 (14")</option>
+              <option>MacBook Pro M3 Pro (16")</option>
+              <option>iMac 24" M3</option>
+              <option>Mac mini M2</option>
+              <option>Mac Studio M2 Max</option>
+              <option>Mac Pro</option>
+              <option>Not sure — recommend one for me</option>
+            </select>
+          </div>
+          <div class="form-2col">
+            <div class="form-row">
+              <label>Start Date *</label>
+              <input type="date" id="rent-start">
+            </div>
+            <div class="form-row">
+              <label>End Date *</label>
+              <input type="date" id="rent-end">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>Any other requirements?</label>
+            <textarea id="rent-msg" placeholder="Pickup location, accessories needed, project details…"></textarea>
+          </div>
+          <button class="submit-btn" onclick="submitRental()">Submit Rental Request →</button>
+          <p class="form-note">🔒 Your info is safe. We confirm availability in 30 Minutes.</p>
+        </div>
+
+       <!-- REPAIR FORM -->
       <div class="form-panel active" id="form-repair">
         <div id="repair-success" class="form-success">
           <div class="form-success-icon">✅</div>
@@ -668,57 +719,6 @@
           <p class="form-note">🔒 Your info is safe. We never spam.</p>
         </div>
       </div>
-
-      <!-- RENTAL FORM -->
-      <div class="form-panel" id="form-rental">
-        <div id="rental-success" class="form-success">
-          <div class="form-success-icon">✅</div>
-          <h3>Rental Request Sent!</h3>
-          <p>We'll confirm availability and pricing within 30 Minutes.</p>
-        </div>
-        <div id="rental-form-inner">
-          <div class="form-row">
-            <label>Full Name *</label>
-            <input type="text" placeholder="Priya Kapoor" id="rent-name" required>
-          </div>
-          <div class="form-row">
-            <label>Email *</label>
-            <input type="email" placeholder="you@email.com" id="rent-email" required>
-          </div>
-          <div class="form-row">
-            <label>Choose Your Mac *</label>
-            <select id="rent-mac">
-              <option value="" disabled selected>Select a Mac…</option>
-              <option>MacBook Air M1 (13")</option>
-              <option>MacBook Air M2 (13")</option>
-              <option>MacBook Air M3 (15")</option>
-              <option>MacBook Pro M2 (13")</option>
-              <option>MacBook Pro M3 (14")</option>
-              <option>MacBook Pro M3 Pro (16")</option>
-              <option>iMac 24" M3</option>
-              <option>Mac mini M2</option>
-              <option>Mac Studio M2 Max</option>
-              <option>Mac Pro</option>
-              <option>Not sure — recommend one for me</option>
-            </select>
-          </div>
-          <div class="form-2col">
-            <div class="form-row">
-              <label>Start Date *</label>
-              <input type="date" id="rent-start">
-            </div>
-            <div class="form-row">
-              <label>End Date *</label>
-              <input type="date" id="rent-end">
-            </div>
-          </div>
-          <div class="form-row">
-            <label>Any other requirements?</label>
-            <textarea id="rent-msg" placeholder="Pickup location, accessories needed, project details…"></textarea>
-          </div>
-          <button class="submit-btn" onclick="submitRental()">Submit Rental Request →</button>
-          <p class="form-note">🔒 Your info is safe. We confirm availability in 30 Minutes.</p>
-        </div>
       </div>
     </div>
   </div>
@@ -729,170 +729,11 @@
   <div class="section-label">Our Services</div>
   <h2 class="section-title">Everything Mac,<br>Done Right.</h2>
   <div class="section-tabs-nav">
-    <button class="section-tab-btn active" onclick="switchSectionTab('sec-repair', this)">🔧 Repair Services</button>
-    <button class="section-tab-btn" onclick="switchSectionTab('sec-rental', this)">💻 Rental Services</button>
+        <button class="section-tab-btn active" onclick="switchSectionTab('sec-rental', this)">💻 Rental Services</button>
+   <button class="section-tab-btn" onclick="switchSectionTab('sec-repair', this)">🔧 Repair Services</button>
   </div>
 
-  <!-- REPAIR PANEL -->
-  <div class="section-panel active" id="sec-repair">
-
-    <div class="cards-grid">
-
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-front">
-            <div class="flip-front-icon">🖥️</div>
-            <h3>Screen Replacement</h3>
-
-          </div>
-          <div class="flip-back">
-            <span class="flip-back-close">✕</span>
-            <h4>Screen Replacement</h4>
-            <p>Cracked, flickering, or dead displays replaced with genuine Retina panels. Works on all MacBook Air, MacBook Pro, and iMac models. Same-day service available.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-front">
-            <div class="flip-front-icon">🔋</div>
-            <h3>Battery Service</h3>
-
-          </div>
-          <div class="flip-back">
-            <span class="flip-back-close">✕</span>
-            <h4>Battery Service</h4>
-            <p>Genuine Apple-spec batteries installed in 2–3 hours. Restore your full day's charge. We test cycle count and health before and after replacement.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-front">
-            <div class="flip-front-icon">💧</div>
-            <h3>Liquid Damage Recovery</h3>
-
-          </div>
-          <div class="flip-back">
-            <span class="flip-back-close">✕</span>
-            <h4>Liquid Damage Recovery</h4>
-            <p>Ultrasonic cleaning and component-level repair. Act fast — the sooner you bring it in, the better the chances. We recover most liquid-damaged Macs.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-front">
-            <div class="flip-front-icon">⌨️</div>
-            <h3>Keyboard & Trackpad</h3>
-
-          </div>
-          <div class="flip-back">
-            <span class="flip-back-close">✕</span>
-            <h4>Keyboard & Trackpad</h4>
-            <p>Sticky keys, broken keys, butterfly mechanism failures, and unresponsive trackpads — fully repaired or replaced with OEM parts.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-front">
-            <div class="flip-front-icon">💾</div>
-            <h3>Data Recovery</h3>
-
-          </div>
-          <div class="flip-back">
-            <span class="flip-back-close">✕</span>
-            <h4>Data Recovery</h4>
-            <p>Failed SSD or HDD? We recover photos, documents, projects and system files. Clean-room recovery for severely damaged drives available on request.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-front">
-            <div class="flip-front-icon">🛠️</div>
-            <h3>Logic Board Repair</h3>
-
-          </div>
-          <div class="flip-back">
-            <span class="flip-back-close">✕</span>
-            <h4>Logic Board Repair</h4>
-            <p>Micro-soldering and component-level repair for complex failures. Save ₹30,000–₹80,000 vs buying a new Mac. Covered by our 90-day warranty.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-front">
-            <div class="flip-front-icon">⚡</div>
-            <h3>RAM & SSD Upgrade</h3>
-
-          </div>
-          <div class="flip-back">
-            <span class="flip-back-close">✕</span>
-            <h4>RAM & SSD Upgrade</h4>
-            <p>Breathe new life into an older Mac. Upgrade to NVMe SSD for dramatically faster speeds, or add RAM to handle demanding creative workloads.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-front">
-            <div class="flip-front-icon">🔌</div>
-            <h3>Charging Port Repair</h3>
-
-          </div>
-          <div class="flip-back">
-            <span class="flip-back-close">✕</span>
-            <h4>Charging Port Repair</h4>
-            <p>MagSafe 1, MagSafe 2, and USB-C / Thunderbolt port damage repaired. If your Mac won't charge, we'll diagnose whether it's the port, cable, or board.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="why-num">01</div>
-        <div>
-          <h4>Free Diagnosis</h4>
-          <p>We assess your Mac and give you a transparent quote before any work begins.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <div class="why-num">02</div>
-        <div>
-          <h4>Doorstep Pickup & Drop</h4>
-          <p>Across major Londonn cities. We collect your Mac and return it repaired.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <div class="why-num">03</div>
-        <div>
-          <h4>90-Day Warranty</h4>
-          <p>Every repair is backed by a 90-day parts and labour warranty. No surprises.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <div class="why-num">04</div>
-        <div>
-          <h4>Certified Technicians</h4>
-          <p>Our engineers are trained on every Mac generation from 2012 to M3.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RENTAL PANEL -->
+    <!-- RENTAL PANEL -->
   <div class="section-panel" id="sec-rental">
     <p class="section-sub" style="margin-bottom: 32px;">From a single MacBook for a day to a fleet of Macs for your entire production — flexible rental with full technical support.</p>
 
@@ -1077,6 +918,165 @@
         <div>
           <h4>On-Site Tech Support</h4>
           <p>For large rentals, a dedicated technician stays on-site throughout your event or project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- REPAIR PANEL -->
+  <div class="section-panel active" id="sec-repair">
+
+    <div class="cards-grid">
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-front-icon">🖥️</div>
+            <h3>Screen Replacement</h3>
+
+          </div>
+          <div class="flip-back">
+            <span class="flip-back-close">✕</span>
+            <h4>Screen Replacement</h4>
+            <p>Cracked, flickering, or dead displays replaced with genuine Retina panels. Works on all MacBook Air, MacBook Pro, and iMac models. Same-day service available.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-front-icon">🔋</div>
+            <h3>Battery Service</h3>
+
+          </div>
+          <div class="flip-back">
+            <span class="flip-back-close">✕</span>
+            <h4>Battery Service</h4>
+            <p>Genuine Apple-spec batteries installed in 2–3 hours. Restore your full day's charge. We test cycle count and health before and after replacement.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-front-icon">💧</div>
+            <h3>Liquid Damage Recovery</h3>
+
+          </div>
+          <div class="flip-back">
+            <span class="flip-back-close">✕</span>
+            <h4>Liquid Damage Recovery</h4>
+            <p>Ultrasonic cleaning and component-level repair. Act fast — the sooner you bring it in, the better the chances. We recover most liquid-damaged Macs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-front-icon">⌨️</div>
+            <h3>Keyboard & Trackpad</h3>
+
+          </div>
+          <div class="flip-back">
+            <span class="flip-back-close">✕</span>
+            <h4>Keyboard & Trackpad</h4>
+            <p>Sticky keys, broken keys, butterfly mechanism failures, and unresponsive trackpads — fully repaired or replaced with OEM parts.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-front-icon">💾</div>
+            <h3>Data Recovery</h3>
+
+          </div>
+          <div class="flip-back">
+            <span class="flip-back-close">✕</span>
+            <h4>Data Recovery</h4>
+            <p>Failed SSD or HDD? We recover photos, documents, projects and system files. Clean-room recovery for severely damaged drives available on request.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-front-icon">🛠️</div>
+            <h3>Logic Board Repair</h3>
+
+          </div>
+          <div class="flip-back">
+            <span class="flip-back-close">✕</span>
+            <h4>Logic Board Repair</h4>
+            <p>Micro-soldering and component-level repair for complex failures. Save ₹30,000–₹80,000 vs buying a new Mac. Covered by our 90-day warranty.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-front-icon">⚡</div>
+            <h3>RAM & SSD Upgrade</h3>
+
+          </div>
+          <div class="flip-back">
+            <span class="flip-back-close">✕</span>
+            <h4>RAM & SSD Upgrade</h4>
+            <p>Breathe new life into an older Mac. Upgrade to NVMe SSD for dramatically faster speeds, or add RAM to handle demanding creative workloads.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <div class="flip-front-icon">🔌</div>
+            <h3>Charging Port Repair</h3>
+
+          </div>
+          <div class="flip-back">
+            <span class="flip-back-close">✕</span>
+            <h4>Charging Port Repair</h4>
+            <p>MagSafe 1, MagSafe 2, and USB-C / Thunderbolt port damage repaired. If your Mac won't charge, we'll diagnose whether it's the port, cable, or board.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div>
+          <h4>Free Diagnosis</h4>
+          <p>We assess your Mac and give you a transparent quote before any work begins.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div>
+          <h4>Doorstep Pickup & Drop</h4>
+          <p>Across major Londonn cities. We collect your Mac and return it repaired.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div>
+          <h4>90-Day Warranty</h4>
+          <p>Every repair is backed by a 90-day parts and labour warranty. No surprises.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div>
+          <h4>Certified Technicians</h4>
+          <p>Our engineers are trained on every Mac generation from 2012 to M3.</p>
         </div>
       </div>
     </div>
@@ -1282,11 +1282,65 @@
     </div>
     <div class="form-card">
       <div class="form-tabs">
-        <button class="form-tab-btn active" onclick="switchFormTab2('repair2', this)">🔧 Repair</button>
-        <button class="form-tab-btn" onclick="switchFormTab2('rental2', this)">💻 Rental</button>
+           <button class="form-tab-btn active" onclick="switchFormTab2('rental2', this)">💻 Rental</button>
+       <button class="form-tab-btn" onclick="switchFormTab2('repair2', this)">🔧 Repair</button>
       </div>
       <div class="form-body">
-        <!-- REPAIR FORM 2 -->
+        
+        <!-- RENTAL FORM 2 -->
+        <div class="form-panel" id="form-rental2">
+          <div id="rental2-success" class="form-success">
+            <div class="form-success-icon">✅</div>
+            <h3>Rental Request Sent!</h3>
+            <p>We'll confirm availability and pricing within 1 hour.</p>
+          </div>
+          <div id="rental2-form-inner">
+            <div class="form-row">
+              <label>Full Name *</label>
+              <input type="text" placeholder="Priya Kapoor" id="rent2-name" required>
+            </div>
+            <div class="form-row">
+              <label>Email *</label>
+              <input type="email" placeholder="you@email.com" id="rent2-email" required>
+            </div>
+            <div class="form-row">
+              <label>Choose Your Mac *</label>
+              <select id="rent2-mac">
+                <option value="" disabled selected>Select a Mac…</option>
+                <option>MacBook Air M1 (13")</option>
+                <option>MacBook Air M2 (13")</option>
+                <option>MacBook Air M3 (15")</option>
+                <option>MacBook Pro M2 (13")</option>
+                <option>MacBook Pro M3 (14")</option>
+                <option>MacBook Pro M3 Pro (16")</option>
+                <option>iMac 24" M3</option>
+                <option>Mac mini M2</option>
+                <option>Mac Studio M2 Max</option>
+                <option>Mac Pro</option>
+                <option>Not sure — recommend one for me</option>
+              </select>
+            </div>
+            <div class="form-2col">
+              <div class="form-row">
+                <label>Start Date *</label>
+                <input type="date" id="rent2-start">
+              </div>
+              <div class="form-row">
+                <label>End Date *</label>
+                <input type="date" id="rent2-end">
+              </div>
+            </div>
+            <div class="form-row">
+              <label>Any other message?</label>
+              <textarea id="rent2-msg" placeholder="Pickup location, accessories, project details…"></textarea>
+            </div>
+            <button class="submit-btn" onclick="submitRental2()">Submit Rental Request →</button>
+            <p class="form-note">🔒 Your info is safe. We confirm availability in 1 hour.</p>
+          </div>
+        </div>
+      </div>
+
+     <!-- REPAIR FORM 2 -->
         <div class="form-panel active" id="form-repair2">
           <div id="repair2-success" class="form-success">
             <div class="form-success-icon">✅</div>
@@ -1345,58 +1399,6 @@
             <p class="form-note">🔒 Your info is safe. We never spam.</p>
           </div>
         </div>
-        <!-- RENTAL FORM 2 -->
-        <div class="form-panel" id="form-rental2">
-          <div id="rental2-success" class="form-success">
-            <div class="form-success-icon">✅</div>
-            <h3>Rental Request Sent!</h3>
-            <p>We'll confirm availability and pricing within 1 hour.</p>
-          </div>
-          <div id="rental2-form-inner">
-            <div class="form-row">
-              <label>Full Name *</label>
-              <input type="text" placeholder="Priya Kapoor" id="rent2-name" required>
-            </div>
-            <div class="form-row">
-              <label>Email *</label>
-              <input type="email" placeholder="you@email.com" id="rent2-email" required>
-            </div>
-            <div class="form-row">
-              <label>Choose Your Mac *</label>
-              <select id="rent2-mac">
-                <option value="" disabled selected>Select a Mac…</option>
-                <option>MacBook Air M1 (13")</option>
-                <option>MacBook Air M2 (13")</option>
-                <option>MacBook Air M3 (15")</option>
-                <option>MacBook Pro M2 (13")</option>
-                <option>MacBook Pro M3 (14")</option>
-                <option>MacBook Pro M3 Pro (16")</option>
-                <option>iMac 24" M3</option>
-                <option>Mac mini M2</option>
-                <option>Mac Studio M2 Max</option>
-                <option>Mac Pro</option>
-                <option>Not sure — recommend one for me</option>
-              </select>
-            </div>
-            <div class="form-2col">
-              <div class="form-row">
-                <label>Start Date *</label>
-                <input type="date" id="rent2-start">
-              </div>
-              <div class="form-row">
-                <label>End Date *</label>
-                <input type="date" id="rent2-end">
-              </div>
-            </div>
-            <div class="form-row">
-              <label>Any other message?</label>
-              <textarea id="rent2-msg" placeholder="Pickup location, accessories, project details…"></textarea>
-            </div>
-            <button class="submit-btn" onclick="submitRental2()">Submit Rental Request →</button>
-            <p class="form-note">🔒 Your info is safe. We confirm availability in 1 hour.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>

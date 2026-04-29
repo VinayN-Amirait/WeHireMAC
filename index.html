@@ -604,13 +604,13 @@
   <!-- CONTACT FORM -->
   <div class="form-card">
     <div class="form-tabs">
-      <button class="form-tab-btn active" onclick="switchFormTab('repair', this)">🔧 Repair</button>
-      <button class="form-tab-btn" onclick="switchFormTab('rental', this)">💻 Rental</button>
+      <button class="form-tab-btn active" onclick="switchFormTab('rental', this)">💻 Rental</button>
+      <button class="form-tab-btn" onclick="switchFormTab('repair', this)">🔧 Repair</button>
     </div>
 
     <div class="form-body">
       <!-- REPAIR FORM -->
-      <div class="form-panel active" id="form-repair">
+      <div class="form-panel" id="form-repair">
         <div id="repair-success" class="form-success">
           <div class="form-success-icon">✅</div>
           <h3>Request Received!</h3>
@@ -670,7 +670,7 @@
       </div>
 
       <!-- RENTAL FORM -->
-      <div class="form-panel" id="form-rental">
+      <div class="form-panel active" id="form-rental">
         <div id="rental-success" class="form-success">
           <div class="form-success-icon">✅</div>
           <h3>Rental Request Sent!</h3>
@@ -729,12 +729,12 @@
   <div class="section-label">Our Services</div>
   <h2 class="section-title">Everything Mac,<br>Done Right.</h2>
   <div class="section-tabs-nav">
-    <button class="section-tab-btn active" onclick="switchSectionTab('sec-repair', this)">🔧 Repair Services</button>
-    <button class="section-tab-btn" onclick="switchSectionTab('sec-rental', this)">💻 Rental Services</button>
+    <button class="section-tab-btn active" onclick="switchSectionTab('sec-rental', this)">💻 Rental Services</button>
+    <button class="section-tab-btn" onclick="switchSectionTab('sec-repair', this)">🔧 Repair Services</button>
   </div>
 
   <!-- REPAIR PANEL -->
-  <div class="section-panel active" id="sec-repair">
+  <div class="section-panel" id="sec-repair">
 
     <div class="cards-grid">
 
@@ -893,7 +893,7 @@
   </div>
 
   <!-- RENTAL PANEL -->
-  <div class="section-panel" id="sec-rental">
+  <div class="section-panel active" id="sec-rental">
     <p class="section-sub" style="margin-bottom: 32px;">From a single MacBook for a day to a fleet of Macs for your entire production — flexible rental with full technical support.</p>
 
     <div class="mac-grid">
@@ -1282,12 +1282,12 @@
     </div>
     <div class="form-card">
       <div class="form-tabs">
-        <button class="form-tab-btn active" onclick="switchFormTab2('repair2', this)">🔧 Repair</button>
-        <button class="form-tab-btn" onclick="switchFormTab2('rental2', this)">💻 Rental</button>
+        <button class="form-tab-btn active" onclick="switchFormTab2('rental2', this)">💻 Rental</button>
+        <button class="form-tab-btn" onclick="switchFormTab2('repair2', this)">🔧 Repair</button>
       </div>
       <div class="form-body">
         <!-- REPAIR FORM 2 -->
-        <div class="form-panel active" id="form-repair2">
+        <div class="form-panel" id="form-repair2">
           <div id="repair2-success" class="form-success">
             <div class="form-success-icon">✅</div>
             <h3>Request Received!</h3>
@@ -1346,7 +1346,7 @@
           </div>
         </div>
         <!-- RENTAL FORM 2 -->
-        <div class="form-panel" id="form-rental2">
+        <div class="form-panel active" id="form-rental2">
           <div id="rental2-success" class="form-success">
             <div class="form-success-icon">✅</div>
             <h3>Rental Request Sent!</h3>
